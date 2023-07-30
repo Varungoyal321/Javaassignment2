@@ -1,0 +1,24 @@
+class Labyrinth {
+    String[][] path;
+
+    public Labyrinth(String[][] path) {
+        this.path = path;
+    }
+
+    public static void main(String[] args) {
+        String[][] path = {
+            {"Start", "Path", "Trap"},
+            {"Trap", "Path", "End"}
+        };
+
+        Labyrinth labyrinth = new Labyrinth(path);
+
+        // Print the labyrinth
+        for (String[] row : labyrinth.path) {
+            for (String cell : row) {
+                System.out.print(cell + "\t");
+            }
+            System.out.println();
+        }
+    }
+}
