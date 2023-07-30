@@ -1,0 +1,27 @@
+class StolenFood {
+    String location;
+    int quantity;
+
+    public StolenFood(String location, int quantity) {
+        this.location = location;
+        this.quantity = quantity;
+    }
+
+    public void retrieveFood() {
+        if (this.quantity > 0) {
+            System.out.println("Retrieving " + this.quantity + " units of stolen dog food from " + this.location);
+            this.quantity = 0;
+            System.out.println("All stolen dog food has been retrieved!");
+        } else {
+            System.out.println("There is no stolen dog food to retrieve.");
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        StolenFood food = new StolenFood("Vault", 100);
+        // Write code here to retrieve the stolen dog food
+        food.retrieveFood();
+    }
+}
