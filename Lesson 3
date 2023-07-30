@@ -1,0 +1,43 @@
+interface SecuritySystem {
+    boolean validate(String input);
+}
+
+class BiometricScanner implements SecuritySystem {
+    @Override
+    public boolean validate(String input) {
+        // Write code here to validate biometric data
+        // Your actual biometric validation logic goes here
+        // For demonstration purposes, let's assume biometric validation always passes
+        return true;
+    }
+}
+
+class PasswordLock implements SecuritySystem {
+    @Override
+    public boolean validate(String input) {
+        // Write code here to validate password
+        // Your actual password validation logic goes here
+        // For demonstration purposes, let's assume password validation always passes
+        return true;
+    }
+}
+
+class BypassSecurity implements SecuritySystem {
+    @Override
+    public boolean validate(String input) {
+        return true; // Bypasses the security system
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Bypassing the BiometricScanner
+        SecuritySystem bypass = new BypassSecurity();
+        BiometricScanner scanner = new BiometricScanner();
+        scanner = (BiometricScanner) bypass; // Bypasses the scanner security system
+
+        // Bypassing the PasswordLock
+        PasswordLock lock = new PasswordLock();
+        lock = (PasswordLock) bypass; // Bypasses the lock security system
+    }
+}
