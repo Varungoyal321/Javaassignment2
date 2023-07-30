@@ -1,0 +1,29 @@
+class AgentPeanut {
+    String name;
+    String mission;
+
+    public AgentPeanut(String name, String mission) {
+        this.name = name;
+        this.mission = mission;
+    }
+
+    class HerrWolf {
+        String name;
+        String fortress;
+
+        public HerrWolf(String name, String fortress) {
+            this.name = name;
+            this.fortress = fortress;
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        AgentPeanut agent = new AgentPeanut("Agent Peanut", "Retrieve secret documents");
+        AgentPeanut.HerrWolf wolf = agent.new HerrWolf("Herr Wolf", "Fortress XYZ");
+
+        System.out.println("Agent: " + agent.name + ", Mission: " + agent.mission);
+        System.out.println("Character: " + wolf.name + ", Fortress: " + wolf.fortress);
+    }
+}
